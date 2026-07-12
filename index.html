@@ -1,14 +1,180 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ehab Thaer | SOC & Detection Engineering</title>
-    <meta name="description" content="Ehab Thaer portfolio - Security Analyst, DevSecOps, and Detection Engineer." />
-    <script type="module" crossorigin src="/Ehab-Skills/assets/index-D5J47lmi.js"></script>
-    <link rel="stylesheet" crossorigin href="/Ehab-Skills/assets/index-K_-sX4hF.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ehab | Security Analyst Portfolio</title>
+  <meta name="description" content="Simple, modern, premium cybersecurity portfolio for Ehab - Security Analyst with SIEM and malware analysis practical skills." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: "#0b1220",
+            panel: "#111a2e",
+            panel2: "#16223a",
+            line: "rgba(148, 163, 184, 0.22)",
+            primary: "#60a5fa",
+            accent: "#22d3ee",
+            textMain: "#e2e8f0",
+            textSoft: "#94a3b8"
+          },
+          boxShadow: {
+            soft: "0 14px 35px rgba(2, 6, 23, .35)",
+            glow: "0 0 0 1px rgba(96,165,250,.25), 0 0 22px rgba(96,165,250,.12)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      background:
+        radial-gradient(1000px 520px at -5% -10%, rgba(96,165,250,.12), transparent 62%),
+        radial-gradient(850px 460px at 105% 10%, rgba(34,211,238,.08), transparent 60%),
+        #0b1220;
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.35));
+      pointer-events: none;
+    }
+    .card {
+      border: 1px solid rgba(148,163,184,.22);
+      background: linear-gradient(145deg, rgba(17,26,46,.92), rgba(22,34,58,.88));
+      backdrop-filter: blur(6px);
+    }
+    .item {
+      border: 1px solid rgba(148,163,184,.22);
+      background: rgba(17,26,46,.7);
+      transition: .2s ease;
+    }
+    .item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(96,165,250,.55);
+      box-shadow: 0 8px 22px rgba(2,6,23,.4);
+    }
+    .manifest {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height .25s ease, opacity .2s ease;
+    }
+    .project:hover .manifest {
+      max-height: 160px;
+      opacity: 1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body class="text-textMain min-h-screen relative font-sans">
+  <div class="absolute inset-0 grid-bg"></div>
+
+  <header class="relative z-10 border-b border-slate-700/40 bg-bg/85 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] text-primary">Security Portfolio</p>
+        <h1 class="text-3xl font-semibold">Ehab Alhab | Security Analyst</h1>
+        <p class="text-sm text-textSoft mt-1">SIEM • Malware Analysis • Web/Network Pentest Foundation</p>
+      </div>
+      <nav class="font-mono text-sm text-textSoft flex flex-wrap gap-4">
+        <a href="#profile" class="hover:text-primary">/profile</a>
+        <a href="#skills" class="hover:text-primary">/skills</a>
+        <a href="#projects" class="hover:text-primary">/projects</a>
+        <a href="#links" class="hover:text-primary">/links</a>
+        <a href="#terminal" class="hover:text-primary">/terminal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-6 py-10 space-y-12">
+    <section id="profile" class="grid lg:grid-cols-5 gap-5">
+      <article class="card rounded-2xl p-6 lg:col-span-3 shadow-soft">
+        <p class="text-xs uppercase tracking-[0.2em] text-accent">Profile</p>
+        <h2 class="text-3xl mt-2 font-semibold">Simple. Practical. Blue Team.</h2>
+        <p class="text-textSoft mt-4 leading-relaxed">
+          I am a Security Analyst focused on defensive security operations.
+          I have practical hands-on work with SIEM and malware analysis.
+          I also have foundational knowledge in web and network penetration testing.
+        </p>
+      </article>
+
+      <aside class="card rounded-2xl p-6 lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.2em] text-textSoft">Current Focus</p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex justify-between"><span class="text-textSoft">SIEM Practical Work</span><span class="text-accent">Active</span></li>
+          <li class="flex justify-between"><span class="text-textSoft">Malware Analysis</span><span class="text-primary">Ongoing</span></li>
+          <li class="flex justify-between"><span class="text-textSoft">Blue Team Operations</span><span class="text-emerald-400">Daily</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="skills" class="space-y-4">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-semibold">Skills</h3>
+        <span class="text-xs text-textSoft font-mono">Only your real skills</span>
+      </div>
+      <div id="skills-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4"></div>
+    </section>
+
+    <section id="projects" class="space-y-4">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-semibold">Projects</h3>
+        <span class="text-xs text-textSoft font-mono">Only repositories you provided</span>
+      </div>
+      <div id="projects-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+    </section>
+
+    <section id="links" class="card rounded-2xl p-6">
+      <h3 class="text-xl font-semibold">Verified Platform Links</h3>
+      <div class="mt-4 grid sm:grid-cols-2 xl:grid-cols-4 gap-3 text-sm">
+        <a class="item rounded-xl p-4" href="https://cyberdefenders.org/p/ehabalhab7/" target="_blank" rel="noopener noreferrer">
+          <p class="text-xs text-textSoft">CyberDefenders</p>
+          <p class="mt-1 font-medium">cyberdefenders.org/p/ehabalhab7/</p>
+        </a>
+        <a class="item rounded-xl p-4" href="https://app.letsdefend.io/user/ehabal7ab" target="_blank" rel="noopener noreferrer">
+          <p class="text-xs text-textSoft">LetsDefend</p>
+          <p class="mt-1 font-medium">app.letsdefend.io/user/ehabal7ab</p>
+        </a>
+        <a class="item rounded-xl p-4" href="https://github.com/Ehabal7ab" target="_blank" rel="noopener noreferrer">
+          <p class="text-xs text-textSoft">GitHub</p>
+          <p class="mt-1 font-medium">github.com/Ehabal7ab</p>
+        </a>
+        <a class="item rounded-xl p-4" href="https://tryhackme.com/p/ehabal7ab" target="_blank" rel="noopener noreferrer">
+          <p class="text-xs text-textSoft">TryHackMe</p>
+          <p class="mt-1 font-medium">tryhackme.com/p/ehabal7ab</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="terminal" class="card rounded-2xl p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold">Terminal</h3>
+        <span class="text-xs text-textSoft font-mono">help · skills · projects · links · clear</span>
+      </div>
+      <div class="rounded-xl border border-slate-600/40 bg-black/30 p-4 font-mono text-sm">
+        <div id="terminal-output" class="h-56 overflow-auto whitespace-pre-wrap"></div>
+        <label class="mt-3 flex items-center gap-2">
+          <span class="text-accent">$</span>
+          <input id="terminal-input" type="text" class="w-full bg-transparent outline-none text-primary placeholder:text-textSoft/70" placeholder="Enter command..." />
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-slate-700/40 py-6 text-center text-xs text-textSoft font-mono">
+    © <span id="year"></span> Ehab Alhab — Security Analyst Portfolio
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
 </html>
