@@ -1,14 +1,252 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ehab Thaer | SOC & Detection Engineering</title>
-    <meta name="description" content="Ehab Thaer portfolio - Security Analyst, DevSecOps, and Detection Engineer." />
-    <script type="module" crossorigin src="/Ehab-Skills/assets/index-D5J47lmi.js"></script>
-    <link rel="stylesheet" crossorigin href="/Ehab-Skills/assets/index-K_-sX4hF.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Engineer | Command Center Portfolio</title>
+  <meta name="description" content="Premium interactive cybersecurity engineer portfolio with terminal UI, skill nodes, and cyber profile hub." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0f1724',
+            panel: '#131c2b',
+            panelSoft: '#172235',
+            cyber: '#22c55e',
+            cyberBlue: '#38bdf8',
+            cyberAmber: '#f59e0b',
+            textMain: '#e6edf6',
+            textSoft: '#93a4bd',
+            borderGlow: 'rgba(56,189,248,0.22)'
+          },
+          boxShadow: {
+            glowBlue: '0 0 0 1px rgba(56,189,248,0.18), 0 0 24px rgba(56,189,248,0.14)',
+            glowGreen: '0 0 0 1px rgba(34,197,94,0.22), 0 0 22px rgba(34,197,94,0.14)'
+          },
+          fontFamily: {
+            mono: ['ui-monospace','SFMono-Regular','Menlo','monospace'],
+            sans: ['Inter','ui-sans-serif','system-ui','sans-serif']
+          },
+          keyframes: {
+            pulseRadar: {
+              '0%': { transform: 'scale(0.75)', opacity: '0.4' },
+              '70%': { transform: 'scale(1.2)', opacity: '0' },
+              '100%': { transform: 'scale(1.2)', opacity: '0' }
+            },
+            floatSlow: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' }
+            },
+            flicker: {
+              '0%,18%,22%,62%,64%,100%': { opacity: '1' },
+              '20%,24%,63%': { opacity: '0.65' }
+            }
+          },
+          animation: {
+            pulseRadar: 'pulseRadar 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite',
+            floatSlow: 'floatSlow 4s ease-in-out infinite',
+            flicker: 'flicker 3.6s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background:
+        radial-gradient(900px 550px at 80% -10%, rgba(56, 189, 248, 0.08), transparent 62%),
+        radial-gradient(700px 450px at -10% 15%, rgba(34, 197, 94, 0.07), transparent 60%),
+        #0f1724;
+    }
+
+    .grid-overlay {
+      background-image:
+        linear-gradient(rgba(147, 164, 189, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(147, 164, 189, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.25));
+      pointer-events: none;
+    }
+
+    .scanline::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.07), transparent);
+      background-size: 100% 5px;
+      opacity: 0.08;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .cyber-card {
+      border: 1px solid rgba(147, 164, 189, 0.18);
+      background: linear-gradient(145deg, rgba(19, 28, 43, 0.95), rgba(23, 34, 53, 0.92));
+      backdrop-filter: blur(6px);
+    }
+
+    .node {
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .node:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.22), 0 10px 20px rgba(2, 8, 23, 0.45);
+    }
+
+    .manifest {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 250ms ease, opacity 220ms ease;
+    }
+
+    .project-card:hover .manifest {
+      max-height: 170px;
+      opacity: 1;
+    }
+
+    .glitch-hover:hover {
+      text-shadow: 1px 0 #22c55e, -1px 0 #38bdf8;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="text-textMain font-sans min-h-screen relative">
+  <div class="absolute inset-0 grid-overlay"></div>
+
+  <header class="relative z-10 border-b border-slate-700/40 bg-bg/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.24em] text-cyberBlue font-mono">Security Command Center</p>
+        <h1 class="text-2xl md:text-3xl font-semibold glitch-hover">Ehab | Cybersecurity Engineer</h1>
+      </div>
+      <nav class="text-sm font-mono text-textSoft flex flex-wrap gap-3">
+        <a href="#about" class="hover:text-cyberBlue transition-colors">/about</a>
+        <a href="#skills" class="hover:text-cyberBlue transition-colors">/skills</a>
+        <a href="#profile" class="hover:text-cyberBlue transition-colors">/profile-hub</a>
+        <a href="#projects" class="hover:text-cyberBlue transition-colors">/projects</a>
+        <a href="#terminal" class="hover:text-cyberBlue transition-colors">/terminal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-6 py-10 space-y-14">
+    <section id="about" class="grid lg:grid-cols-3 gap-6 items-stretch">
+      <div class="lg:col-span-2 cyber-card rounded-2xl p-6 sm:p-8 shadow-glowBlue scanline relative overflow-hidden">
+        <p class="text-xs uppercase tracking-[0.2em] text-cyber font-mono mb-3">Status: Active</p>
+        <h2 class="text-3xl sm:text-4xl font-semibold leading-tight">Defending Systems.<br/>Engineering Trust.</h2>
+        <p class="mt-4 text-textSoft max-w-2xl leading-relaxed">
+          Cybersecurity engineer with hands-on offensive and defensive capabilities across cloud, web applications,
+          SIEM workflows, and secure software lifecycles. I build resilient systems with measurable security outcomes.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3 font-mono text-xs">
+          <span class="px-3 py-1 rounded-full border border-cyber/35 text-cyber">SOC Automation</span>
+          <span class="px-3 py-1 rounded-full border border-cyberBlue/35 text-cyberBlue">Threat Detection</span>
+          <span class="px-3 py-1 rounded-full border border-cyberAmber/35 text-cyberAmber">Cloud Hardening</span>
+        </div>
+      </div>
+
+      <div class="cyber-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <p class="text-xs text-textSoft font-mono">Operational Snapshot</p>
+          <div class="mt-4 space-y-3 text-sm font-mono">
+            <div class="flex justify-between"><span class="text-textSoft">Monitoring</span><span class="text-cyber">Live</span></div>
+            <div class="flex justify-between"><span class="text-textSoft">Incident Readiness</span><span class="text-cyberBlue">High</span></div>
+            <div class="flex justify-between"><span class="text-textSoft">Secure Deployments</span><span class="text-cyberAmber">CI Integrated</span></div>
+          </div>
+        </div>
+        <p class="text-xs text-textSoft mt-6">Location: MENA · Available for Security Engineering roles</p>
+      </div>
+    </section>
+
+    <section id="skills" class="space-y-4">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-semibold">Dynamic Skills Inventory</h3>
+        <span class="text-xs text-textSoft font-mono">Hover nodes for metadata</span>
+      </div>
+      <div id="skills-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4"></div>
+    </section>
+
+    <section id="profile" class="grid lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 cyber-card rounded-2xl p-6 relative overflow-hidden">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-mono tracking-[0.2em] text-cyberBlue uppercase">Cyber Profile Hub</p>
+            <h3 class="text-2xl font-semibold mt-2">Platform Intelligence</h3>
+          </div>
+          <div class="relative w-16 h-16">
+            <div class="absolute inset-0 rounded-full border border-cyberBlue/50"></div>
+            <div class="absolute inset-0 rounded-full border border-cyberBlue/50 animate-pulseRadar"></div>
+            <div class="absolute inset-2 rounded-full border border-cyber/60 animate-pulseRadar" style="animation-delay:1.2s"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4 font-mono text-sm">
+          <article class="rounded-xl border border-slate-600/40 bg-panel/60 p-4">
+            <p class="text-textSoft text-xs">TryHackMe Rank</p>
+            <p class="text-2xl mt-2 text-cyberBlue">Top 5%</p>
+            <p class="text-xs mt-2 text-textSoft">Paths Completed: <span class="text-textMain">17</span></p>
+          </article>
+          <article class="rounded-xl border border-slate-600/40 bg-panel/60 p-4">
+            <p class="text-textSoft text-xs">HackTheBox</p>
+            <p class="text-2xl mt-2 text-cyber">Pro Hacker</p>
+            <p class="text-xs mt-2 text-textSoft">Machines Pwned: <span class="text-textMain">64</span></p>
+          </article>
+        </div>
+
+        <p class="mt-4 text-xs text-textSoft">*Replace these values in <code class="text-cyberBlue">app.js</code> with your real stats or API-fed values.</p>
+      </div>
+
+      <div class="cyber-card rounded-2xl p-6">
+        <p class="text-xs font-mono text-textSoft">Live Sync</p>
+        <div class="mt-4 h-36 rounded-lg border border-slate-600/40 bg-panelSoft/70 p-3 font-mono text-xs overflow-auto" id="sync-log"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="space-y-4">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-semibold">System Deployments</h3>
+        <span class="text-xs text-textSoft font-mono">Hover cards for manifests</span>
+      </div>
+      <div id="projects-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+    </section>
+
+    <section id="terminal" class="cyber-card rounded-2xl p-4 sm:p-6">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xl font-semibold">Interactive Terminal</h3>
+        <p class="text-xs font-mono text-textSoft">commands: help, skills, projects, about, clear</p>
+      </div>
+      <div class="rounded-xl border border-slate-600/40 bg-black/35 p-4 font-mono text-sm">
+        <div id="terminal-output" class="h-56 overflow-auto whitespace-pre-wrap text-textMain"></div>
+        <label class="mt-3 flex items-center gap-2">
+          <span class="text-cyber">$</span>
+          <input id="terminal-input" type="text" class="w-full bg-transparent outline-none text-cyberBlue placeholder:text-textSoft/60" placeholder="Type a command..." autocomplete="off" />
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-slate-700/40 py-6 text-center text-xs text-textSoft font-mono">
+    © <span id="year"></span> Ehab — Cybersecurity Engineer Portfolio
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
 </html>
